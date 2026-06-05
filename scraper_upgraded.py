@@ -40,7 +40,6 @@ from telethon.tl.types import Channel, Chat, User
 # ============================================================
 api_id = 611335
 api_hash = 'd524b414d21f4d37f08684c1df41ac9c'
-phone = '+959663617728'
 session_name = 'discoverer_session'  # session 文件名
 
 # 每个群扫描消息数上限（原版是 1000000 太大了）

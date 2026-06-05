@@ -17,7 +17,6 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 api_id = 611335
 api_hash = 'd524b414d21f4d37f08684c1df41ac9c'
-phone = '+959663617728'
 session_name = 'discoverer_session'
 
 PROGRESS_FILE = 'resolve_progress.json'
@@ -67,7 +66,7 @@ async def countdown(seconds):
 
 async def main():
     client = TelegramClient(session_name, api_id, api_hash)
-    await client.start(phone=phone)
+    await client.start()
 
     me = await client.get_me()
     print(f"[OK] logged in: {me.first_name} (@{me.username})")

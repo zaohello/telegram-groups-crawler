@@ -132,11 +132,12 @@ def extract_tg_links(text: str) -> set:
         if username.lower() not in EXCLUDED_USERNAMES and not username.lower().endswith('bot'):
             found.add(username)
 
-    # Pattern 6: @username 提及 —— 原版完全没有
-    for match in re.finditer(r'@([a-zA-Z]\w{3,})', text):
-        username = match.group(1)
-        if username.lower() not in EXCLUDED_USERNAMES and not username.lower().endswith('bot'):
-            found.add(username)
+    # Pattern 6: @username 提及 —— 已禁用！
+    # 原因：群聊里 @某人 大多是个人用户，不是群链接，会混入大量噪音
+    # for match in re.finditer(r'@([a-zA-Z]\w{3,})', text):
+    #     username = match.group(1)
+    #     if username.lower() not in EXCLUDED_USERNAMES and not username.lower().endswith('bot'):
+    #         found.add(username)
 
     return found
 
